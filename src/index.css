@@ -1,3 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1{
+  @apply text-4xl;
+}
+h2{
+  @apply text-3xl;
+}
+h3{
+  @apply text-2xl;
+}
+h4{
+  @apply text-xl;
+}
+h5{
+  @apply text-lg;
+}
+h6{
+  @apply text-base;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +33,41 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button, input, textarea {
+  font-family: "SC Sans Web","SC Sans",Arial,sans-serif;
+}
+
+li {
+  @apply flex;
+}
+li a{
+  @apply w-full;
+}
+
+
+.login-drop li{
+  @apply flex items-stretch border-b-2;
+}
+.login-drop li:hover{
+  @apply bg-gray-200;
+}
+.login-drop li a{
+  @apply py-3 lg:py-5 px-2;
+}
+
+
+.nav-comp li {
+  @apply  border-b-2 lg:border-none w-full whitespace-nowrap p-3 font-medium;
+}
+.nav-comp li:hover {
+  @apply text-[#008738];
+}
+
+.login-form .cred{
+  @apply flex sm:flex-row flex-col sm:items-center gap-2 justify-between;
+}
+.login-form div input{
+  @apply  px-3 py-2 mt-1 border-2 border-gray-300 shadow-sm focus:outline-none focus:border-gray-800 focus:ring-gray-800 sm:text-sm
 }

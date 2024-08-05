@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import UserLogin from "./pages/UserLogin";
+import EmployeeLogin from "./pages/EmployeeLogin";
+import ForgotPass from "./pages/ForgotPass";
+import ResetPass from "./pages/ResetPass";
+import InactivityDetector from "./components/InactivityDetector";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/UserLogin" element={<UserLogin />} />
+        <Route path="/EmployeeLogin" element={<EmployeeLogin />} />
+        <Route path="/ForgotPass" element={<ForgotPass />} />
+        <Route
+          path="/ResetPass"
+          element={
+            <InactivityDetector>
+              <ResetPass />
+            </InactivityDetector>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
